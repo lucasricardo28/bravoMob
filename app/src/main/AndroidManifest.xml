@@ -22,7 +22,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!--<activity android:name=".viewControllers.MainActivity" />-->
+        <!-- <activity android:name=".viewControllers.MainActivity" /> -->
 
         <uses-library android:name="com.google.android.maps" />
 
@@ -30,8 +30,10 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyA-dAcpae30tzUmjrEtEWvzYBJQXepMzdo" />
 
+        <activity android:name=".viewControllers.MainActivity" />
         <activity
-            android:name=".viewControllers.MainActivity"></activity>
+            android:name=".DetailsMapActivity"
+            android:label="@string/title_activity_details_map"></activity>
     </application>
 
 </manifest>

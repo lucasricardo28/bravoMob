@@ -68,4 +68,28 @@ public class BancoController {
 
         return listPots;
     }
+
+    public SinalGps getPotsItem(String itemId){
+        SinalGps sinalGps = new SinalGps();
+
+        Cursor cursor;
+        String[] campos =  {dataBase.ID ,dataBase.LATITUDE , dataBase.LONGITUDE, dataBase.NAME, dataBase.ADDRESS, dataBase.TIME };
+        db = dataBase.getReadableDatabase();
+        cursor = db.query(dataBase.TABLE_REFRIGERATOR_GPS, campos, null, null, null, null, null, null);
+
+        while (cursor.moveToNext()){
+
+
+            sinalGps.setId(cursor.getInt(cursor.getColumnIndex("id")));
+            sinalGps.setLongitude(cursor.getDouble(cursor.getColumnIndex("long")));
+            sinalGps.setLatitude(cursor.getDouble(cursor.getColumnIndex("lat")));
+            sinalGps.setName(cursor.getString(cursor.getColumnIndex("name")));
+            sinalGps.setAddress(cursor.getString(cursor.getColumnIndex("address")));
+            sinalGps.setTime(cursor.getString(cursor.getColumnIndex("time")));
+
+        }
+        cursor.close();
+
+        return sinalGps;
+    }
 }

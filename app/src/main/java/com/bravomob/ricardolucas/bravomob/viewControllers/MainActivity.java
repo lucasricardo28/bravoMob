@@ -1,9 +1,11 @@
 package com.bravomob.ricardolucas.bravomob.viewControllers;
 
+import android.content.Intent;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import com.bravomob.ricardolucas.bravomob.DetailsMapActivity;
 import com.bravomob.ricardolucas.bravomob.R;
 import com.bravomob.ricardolucas.bravomob.connection.BancoController;
 import com.bravomob.ricardolucas.bravomob.model.SinalGps;
@@ -70,6 +72,11 @@ public class MainActivity extends FragmentActivity implements OnMapReadyCallback
             mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
                 @Override
                 public boolean onMarkerClick(Marker marker) {
+
+                    Intent intent = new Intent(getApplicationContext(), DetailsMapActivity.class);
+                    intent.putExtra("client_id",marker.getTag().toString());
+                    startActivity(intent);
+
                     Toast.makeText(getApplicationContext(), marker.getTag()+"" , Toast.LENGTH_LONG).show();
                     return false;
                 }
