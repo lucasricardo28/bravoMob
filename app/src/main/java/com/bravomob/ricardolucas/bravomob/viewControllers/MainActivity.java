@@ -74,7 +74,7 @@ public class MainActivity extends FragmentActivity implements OnMapReadyCallback
                 public boolean onMarkerClick(Marker marker) {
 
                     Intent intent = new Intent(getApplicationContext(), DetailsMapActivity.class);
-                    intent.putExtra("client_id",marker.getTag().toString());
+                    intent.putExtra("ids",marker.getTag());
                     startActivity(intent);
 
                     Toast.makeText(getApplicationContext(), marker.getTag()+"" , Toast.LENGTH_LONG).show();

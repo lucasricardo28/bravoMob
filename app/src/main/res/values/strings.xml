@@ -2,5 +2,8 @@
     <string name="app_name">BravoMob</string>
     <string name="title_activity_details_map">Map</string>
 
-    <string name="default_name">NAME</string>
+    <string name="default_name">NAME DO LOCAL</string>
+    <string name="default_week">DIAS DA SEMANA ABERTO</string>
+    <string name="default_hour">HORARIO</string>
+    <string name="default_street">RUA</string>
 </resources>

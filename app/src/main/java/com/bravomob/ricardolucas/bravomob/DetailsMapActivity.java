@@ -20,7 +20,7 @@ public class DetailsMapActivity extends FragmentActivity {
 
     private TextView textViewName , textViewWeek, textViewHour, textViewStreet;
 
-    private String itens;
+    private Integer itens;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +41,7 @@ public class DetailsMapActivity extends FragmentActivity {
         textViewStreet = findViewById(R.id.tvStreet);
 
         Bundle extras = getIntent().getExtras();
-        itens = extras.getString("ids");
+        itens = extras.getInt("ids");
 
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
