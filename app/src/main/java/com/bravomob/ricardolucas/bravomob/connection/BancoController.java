@@ -69,16 +69,15 @@ public class BancoController {
         return listPots;
     }
 
-    public SinalGps getPotsItem(String itemId){
+    public SinalGps getPotsItem(Integer itemId){
         SinalGps sinalGps = new SinalGps();
 
         Cursor cursor;
         String[] campos =  {dataBase.ID ,dataBase.LATITUDE , dataBase.LONGITUDE, dataBase.NAME, dataBase.ADDRESS, dataBase.TIME };
         db = dataBase.getReadableDatabase();
-        cursor = db.query(dataBase.TABLE_REFRIGERATOR_GPS, campos, null, null, null, null, null, null);
+        cursor = db.query(dataBase.TABLE_REFRIGERATOR_GPS, campos,  dataBase.ID+" = ? ", new String[]{itemId.toString()}, null, null, null, null);
 
         while (cursor.moveToNext()){
-
 
             sinalGps.setId(cursor.getInt(cursor.getColumnIndex("id")));
             sinalGps.setLongitude(cursor.getDouble(cursor.getColumnIndex("long")));

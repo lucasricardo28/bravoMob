@@ -5,7 +5,6 @@ import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.widget.Toast;
 
-import com.bravomob.ricardolucas.bravomob.DetailsMapActivity;
 import com.bravomob.ricardolucas.bravomob.R;
 import com.bravomob.ricardolucas.bravomob.connection.BancoController;
 import com.bravomob.ricardolucas.bravomob.model.SinalGps;
@@ -73,8 +72,9 @@ public class MainActivity extends FragmentActivity implements OnMapReadyCallback
                 @Override
                 public boolean onMarkerClick(Marker marker) {
 
+                    Integer valueTag = Integer.parseInt(marker.getTag().toString());
                     Intent intent = new Intent(getApplicationContext(), DetailsMapActivity.class);
-                    intent.putExtra("ids",marker.getTag());
+                    intent.putExtra("ids",valueTag);
                     startActivity(intent);
 
                     Toast.makeText(getApplicationContext(), marker.getTag()+"" , Toast.LENGTH_LONG).show();
