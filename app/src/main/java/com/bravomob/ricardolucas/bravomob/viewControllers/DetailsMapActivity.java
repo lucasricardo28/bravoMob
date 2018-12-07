@@ -70,7 +70,7 @@ public class DetailsMapActivity extends FragmentActivity {
                 mMap = googleMap;
 
                 // Add a marker in Sydney and move the camera
-                LatLng newPosition = new LatLng(detalheLong, detalheLat);
+                LatLng newPosition = new LatLng(detalheLat, detalheLong);
                 mMap.addMarker(new MarkerOptions().position(newPosition).title("Marker Details :)"));
                 mMap.moveCamera(CameraUpdateFactory.newLatLng(newPosition));
             }
